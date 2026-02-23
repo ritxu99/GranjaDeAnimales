@@ -7,6 +7,10 @@ package animales;
 
 import java.util.Objects;
 
+/**
+ * 
+ * @author Sara Varas
+ */
 public class Perro extends Animal {
     
     private String raza;

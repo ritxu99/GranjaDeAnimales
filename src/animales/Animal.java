@@ -62,10 +62,18 @@ public abstract class Animal {
         }
     }
 
+    /**
+     * 
+     * @return un string 
+     */
     public String getCodigo() {
         return codigo;
     }
-
+    
+    /**
+     * 
+     * @param codigo es un string
+     */
     public void setCodigo(String codigo) {
         if (!codigo.matches("[0-9a-z]{5}")) {
             throw new IllegalArgumentException();
@@ -73,11 +81,20 @@ public abstract class Animal {
             this.codigo = codigo;
         }
     }
-
+    
+    /**
+     * 
+     * @return tipo LOcalDate
+     */
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
+    /**
+     * 
+     * @param fechaNacimiento tipo LocalDate
+     */
+    
     public void setFechaNacimiento(String fechaNacimiento) {
         LocalDate fecha;
 
@@ -89,11 +106,20 @@ public abstract class Animal {
 
         this.fechaNacimiento = fecha;
     }
-
+    
+    /**
+     * 
+     * @return tipo char
+     */
     public char getSexo() {
         return sexo;
     }
 
+    /**
+     * 
+     * @param sexo tipo char
+     */
+    
     public void setSexo(char sexo) {
         if ((sexo != 'M' && sexo != 'H')) {
             throw new IllegalArgumentException();
@@ -101,11 +127,19 @@ public abstract class Animal {
             this.sexo = sexo;
         }
     }
-
+    
+    /**
+     * 
+     * @return tipo double
+     */
     public double getPeso() {
         return peso;
     }
-
+    
+    /**
+     * 
+     * @param peso tipo double
+     */
     public void setPeso(double peso) {
         if (peso <= 0) {
             throw new IllegalArgumentException();
@@ -113,7 +147,11 @@ public abstract class Animal {
             this.peso = peso;
         }
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -123,7 +161,12 @@ public abstract class Animal {
         hash = 19 * hash + (int) (Double.doubleToLongBits(this.peso) ^ (Double.doubleToLongBits(this.peso) >>> 32));
         return hash;
     }
-
+    
+    /**
+     * 
+     * @param obj tipo Object
+     * @return tipo boolean
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -150,18 +193,38 @@ public abstract class Animal {
         }
         return true;
     }
-
+    
+    /**
+     * 
+     * @return tipo String
+     */
     @Override
     public String toString() {
         return "Animal{" + "codigo=" + codigo + ", fechaNacimiento=" + fechaNacimiento + ", sexo=" + sexo + ", peso=" + peso + '}';
     }
-
+    
+    /**
+     * Es un método abstracto
+     * @return @return tipo String
+     */
     public abstract String hacerSonido();
-
+    
+    /**
+     * Es un método abstracto
+     * @return @return tipo String
+     */
     public abstract String alegrarse();
-
+    
+    /**
+     * Es un método abstracto
+     * @return @return tipo String
+     */
     public abstract String enfadarse();
-
+    
+    /**
+     * Es un método abstracto
+     * @return tipo String
+     */
     public abstract String queSoy();
 
 }
